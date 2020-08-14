@@ -1,15 +1,18 @@
 package com.allstate.pmp.schema.transportation.uploadschemaapi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.criteria.CriteriaBuilder;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.Id;
+//import javax.persistence.criteria.CriteriaBuilder;
+
+//@Entity
+@Document
 public class SchemaDetail {
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
     private String name;
     private String version;
     private String namespace;
@@ -21,7 +24,7 @@ public class SchemaDetail {
     public SchemaDetail() {
     }
 
-    public SchemaDetail(Long id, String name, String version, String namespace, String group_name, String artifact, String jsonFilepath,String xsdFilepath) {
+    public SchemaDetail(String id, String name, String version, String namespace, String group_name, String artifact, String jsonFilepath,String xsdFilepath) {
         this.id = id;
         this.name = name;
         this.version = version;
@@ -32,11 +35,11 @@ public class SchemaDetail {
         this.xsdFilepath = xsdFilepath;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
